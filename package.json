@@ -1,0 +1,23 @@
+{
+  "name": "url_shortener",
+  "version": "1.0.0",
+  "description": "An URL shortener with Express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cwenwen/UrlShortener.git"
+  },
+  "author": "Wenwen Cheng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cwenwen/UrlShortener/issues"
+  },
+  "homepage": "https://github.com/cwenwen/UrlShortener#readme",
+  "dependencies": {
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.41.1"
+  }
+}
