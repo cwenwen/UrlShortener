@@ -1,0 +1,130 @@
+$color__short_url: #cc0000;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  text-align: center;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  height: 5rem;
+  width: 100%;
+  background-color: black;
+  font-size: 2.4rem;
+  line-height: 5rem;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  top: 5rem;
+  margin: 7rem auto;
+  max-width: 600px;
+  font-size: 2rem;
+
+  * {
+    margin: 1rem 0;
+  }
+}
+
+.input {
+  font-size: 1.6rem;
+  height: 2rem;
+  padding: .5rem;
+  border: 2px solid black;
+}
+
+[class^="btn"] {
+  cursor: pointer;
+  color: white;
+  text-transform: uppercase;
+  opacity: .85;
+}
+
+.btn {
+  &__create {
+    margin: 1rem auto;
+    width: 20rem;
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    background-color: black;
+    transition: .2s;
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: .5rem .5rem #999999;
+      opacity: 1;
+    }
+  }
+  &__copy {
+    display: inline-block;
+    //display: none;
+    width: 5rem;
+    height: 3rem;
+    line-height: 3rem;
+    margin-left: 1rem;
+    background-color: $color__short_url;
+    font-size: 1.5rem;
+    font-weight: normal;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.output {
+  padding: 1rem;
+  margin-top: 3rem;
+  border: 2px solid black;
+}
+
+[class^="url"]{
+  word-break: break-all;
+  padding: 2rem;
+  margin: 2rem;
+  border: 2px dashed black;
+}
+
+.url {
+  &__long {
+    font-size: 1.6rem;
+    color: rgba($color: #000000, $alpha: 0.5)
+  }
+
+  &__short {
+    font-weight: 900;
+    color: $color__short_url;
+  }
+}
+
+.footer {
+  font-size: 1.6rem;
+  &__link {
+    text-decoration: none;
+    font-weight: 900;
+    color: black;
+    opacity: .7;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
+}
