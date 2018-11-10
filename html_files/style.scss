@@ -65,6 +65,7 @@ html, body {
   &__copy {
     display: inline-block;
     //display: none;
+    position: relative;
     width: 5rem;
     height: 3rem;
     line-height: 3rem;
@@ -72,9 +73,41 @@ html, body {
     background-color: $color__short_url;
     font-size: 1.5rem;
     font-weight: normal;
+    transition: .2s;
     &:hover {
       opacity: 1;
     }
+  }
+}
+
+.url__short {
+  display: inline-block;
+}
+
+.tip {
+  visibility: hidden;
+  //visibility: visible;
+  width: 6rem;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: .2rem;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -3.3rem;
+  transition: .2s;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
   }
 }
 
@@ -84,17 +117,14 @@ html, body {
   border: 2px solid black;
 }
 
-[class^="url"]{
-  word-break: break-all;
-  padding: 2rem;
-  margin: 2rem;
-  border: 2px dashed black;
-}
-
 .url {
   &__long {
     font-size: 1.6rem;
-    color: rgba($color: #000000, $alpha: 0.5)
+    color: rgba($color: #000000, $alpha: 0.5);
+    word-break: break-all;
+    padding: 2rem;
+    margin: 2rem;
+    border: 2px dashed black;
   }
 
   &__short {
