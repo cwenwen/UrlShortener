@@ -10,6 +10,7 @@ q('body').addEventListener('click', e => {
       
       xhr.onreadystatechange = () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
+          q('.input').value = '';
           q('.url__long').innerText = url;
           q('.url__short').innerText = `http://url.wenwen.tw/s/${xhr.responseText}`;
           q('.btn__copy').style.display = 'inline-block';

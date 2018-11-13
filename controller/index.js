@@ -15,23 +15,26 @@ module.exports = {
         }
       })
       .then(data => {
-        res.send(data[0].urlChar);
-      })
-      .catch(error => {throw error})
+        if (data.length !== 0) {
+          res.send(data[0].urlChar);
 
-    // if not, create short url
-    generateChar(6, char => {
-      // and insert into database
-      Url
-      .create({
-        urlChar: char,
-        urlOriginal: req.body.longUrl
-      })
-      .then(() => {
-        res.send(char);
+        } else {
+          // create short url
+          generateChar(6, char => {
+            // and insert into database
+            Url
+            .create({
+              urlChar: char,
+              urlOriginal: req.body.longUrl
+            })
+            .then(() => {
+              res.send(char);
+            })
+            .catch(error => {throw error})
+          })
+        }
       })
       .catch(error => {throw error})
-    })
   }
 }
 
