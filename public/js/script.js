@@ -2,7 +2,22 @@ const q = selecror => document.querySelector(selecror);
 
 q('body').addEventListener('click', e => {
   // create short url
-  if (e.target.classList.contains('btn__create')) {}
+  if (e.target.classList.contains('btn__create')) {
+    const url = q('.input').value;
+
+    if (url !== '') {
+      const xhr = new XMLHttpRequest();
+      
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          q('.url__short').innerText = `http://s.wenwen.tw/${xhr.responseText}`;
+        }
+      }
+      xhr.open('POST', '/');
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded; charset=UTF-8');
+      xhr.send(`longUrl=${url}`);
+    }
+  }
 
   // copy short url
   if (e.target.classList.contains('btn__copy')) {
