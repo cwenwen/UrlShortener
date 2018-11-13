@@ -8,10 +8,12 @@ const Url = sequelize.define('url', {
     autoIncrement: true,
   },
   urlChar: {
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
+    allowNull: false
   },
   urlOriginal: {
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
+    allowNull: false
   }
 }, {
   timestamps: false,

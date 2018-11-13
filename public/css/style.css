@@ -60,6 +60,7 @@ html, body {
 }
 .btn__copy {
   display: inline-block;
+  position: relative;
   width: 5rem;
   height: 3rem;
   line-height: 3rem;
@@ -67,9 +68,39 @@ html, body {
   background-color: #cc0000;
   font-size: 1.5rem;
   font-weight: normal;
+  transition: 0.2s;
 }
 .btn__copy:hover {
   opacity: 1;
+}
+
+.url__short {
+  display: inline-block;
+}
+
+.tip {
+  visibility: hidden;
+  width: 6rem;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 0.2rem;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -3.3rem;
+  transition: 0.2s;
+}
+.tip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
 }
 
 .output {
@@ -78,16 +109,13 @@ html, body {
   border: 2px solid black;
 }
 
-[class^=url] {
+.url__long {
+  font-size: 1.6rem;
+  color: rgba(0, 0, 0, 0.5);
   word-break: break-all;
   padding: 2rem;
   margin: 2rem;
   border: 2px dashed black;
-}
-
-.url__long {
-  font-size: 1.6rem;
-  color: rgba(0, 0, 0, 0.5);
 }
 .url__short {
   font-weight: 900;
