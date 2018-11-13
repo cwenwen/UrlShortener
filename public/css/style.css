@@ -59,7 +59,7 @@ html, body {
   opacity: 1;
 }
 .btn__copy {
-  display: inline-block;
+  display: none;
   position: relative;
   width: 5rem;
   height: 3rem;

@@ -21,7 +21,7 @@ app.use(express.static('public'));
 // handle route
 app.get('/', indexController.index);
 app.post('/', indexController.shorten);
-app.get('/:value', redirectController);
+app.get('/s/:value', redirectController);
 
 // port
 const port = process.env.PORT || 3000;

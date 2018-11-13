@@ -10,7 +10,9 @@ q('body').addEventListener('click', e => {
       
       xhr.onreadystatechange = () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
-          q('.url__short').innerText = `http://s.wenwen.tw/${xhr.responseText}`;
+          q('.url__long').innerText = url;
+          q('.url__short').innerText = `http://url.wenwen.tw/s/${xhr.responseText}`;
+          q('.btn__copy').style.display = 'inline-block';
         }
       }
       xhr.open('POST', '/');
