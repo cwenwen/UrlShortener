@@ -25,13 +25,20 @@ q('body').addEventListener('click', e => {
   // copy short url
   if (e.target.classList.contains('btn__copy')) {
     let text = q('.url__short').innerText;
-    navigator.clipboard
-      .writeText(text)
-      .then(() => {
-        /* clipboard successfully set */
-        q('.tip').setAttribute("style", "visibility: visible;");
-        setTimeout(() => { q('.tip').setAttribute("style", "visibility: hidden;"); }, 300);
-      })
-      .catch(err => { console.log(err)})
+    copyToClipboard(text);
+    q('.tip').setAttribute("style", "visibility: visible;");
+    setTimeout(() => { q('.tip').setAttribute("style", "visibility: hidden;"); }, 300);
   }
 })
+
+const copyToClipboard = str => {
+  const e = document.createElement('textarea');
+  e.value = str;
+  e.setAttribute('readonly', '');
+  e.style.position = 'absolute';
+  e.style.left = '-9999px';
+  document.body.appendChild(e);
+  e.select();
+  document.execCommand('copy');
+  document.body.removeChild(e);
+};
